@@ -16,7 +16,7 @@
         {
             "Name": "readerWriter",
             "Description": "read and write data",
-            "CodeFile": "readerWriter.js",
+            "CodeFile": "readerwriter.js",
             "RibosomeType": "js",
                     "BridgeFuncs": null,
             "Config": null,
