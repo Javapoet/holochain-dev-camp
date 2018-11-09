@@ -1,0 +1,1 @@
+curl -X POST "http://localhost:4141/fn/readerWriter/holoTextWrite" -H "accept: text/plain" -H "Content-Type: application/json"

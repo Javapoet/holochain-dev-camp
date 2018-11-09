@@ -223,6 +223,11 @@ Follow the instructions to set up the Typescript + React + Redux + holochain sta
 
 Given holochain DNA, generate a swagger / openapi spec file / static swagger-ui html - [dna-to-openapi](https://github.com/holochain/dna-to-openapi)
 
+## Holochain Projects
+
+https://github.com/sqykly/HoloREA
+https://humm.earth
+
 ## Holochain Rust
 
 - [Holochain Developer Preview Release](https://medium.com/holochain/holochain-developer-preview-release-56d0ede52da)
@@ -250,3 +255,36 @@ http://ceptr.org/whitepapers/mutual-credit
 - [Holochain: Reinventing Applications by Nicolas Luck (Medium)](https://medium.com/holochain/holochain-reinventing-applications-d2ac1e4f25ef)
 - [(Medium) Holo’s ERC20 token (HOT) and Mutual Credit Cryptocurrency (Holo fuel)](https://medium.com/h-o-l-o/holos-erc20-token-hot-and-mutual-credit-cryptocurrency-holo-fuel-6d8b6d3938d6)
 - https://github.com/Holochain/holochain-proto/wiki/FAQ#how-is-holochain-different-from-a-dht-distributed-hash-table
+
+# Questions for Joel
+1) How to connect 2 peers on 2 different machines to the same app/holochain? What is the correct command to get us into the same app and into the same table in the bootstrap server?
+Here is some output from our testing.
+
+```
+  C:\Users\dermot>c:\Users\dermot\dev\git\producersmarket\hcProdMkt>hcadmin join . hcProdMkt
+  C:\Users\dermot>hcadmin status
+  installed holochains:
+    hcProdMkt QmazoUCDqq98YfzQQY4aMY3GAu2rA9VeLbMCE9qkcMGcPK
+  C:\Users\dermot>hcd hcProdMkt 3141
+    Serving holochain with DNA hash:QmazoUCDqq98YfzQQY4aMY3GAu2rA9VeLbMCE9qkcMGcPK on port 3141
+    listingZome.listingEntryRead(QmXeZGUbmjM8pP5n2saQCcV2BeXY9tDjaXMje1SGhjFCWG)
+    DHT Query with no peers in routing table!
+```
+
+2) Should the hash of the app be the same for both peers/agents? When we do "hcadmin join ..." to join an app we get a different app hash.
+
+3) How is the private chain backed up?
+
+4) What is the correct way of implementing data permissions?
+    1. AgentA sells tomatoes to AgentB and AgentC can see the transaction but without the price
+    2. AgentC can’t see the transaction
+    3. AgentC can see the whole thing
+    4. AgentA and B and decide to give agentC access to the transaction or price after the fact
+
+5) How are holochain networks deployed and managed?
+
+6) What is the relationship between users and agents?
+    Can an agent manage multiple users?
+    Can a user interact with different agents?
+
+7) Is an agent the same thing as a peer?

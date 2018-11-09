@@ -1,0 +1,43 @@
+{
+    "Version": 1,
+    "UUID": "e066e313-d988-11e8-9276-4ccc6af96c11",
+    "Name": "HoloWorld",
+    "Properties": {
+        "description": "Dev Camp Alpha HoloWorld",
+        "language": "en"
+    },
+    "PropertiesSchemaFile": "properties_schema.json",
+    "RequiresVersion": 25,
+    "DHTConfig": {
+        "HashType": "sha2-256",
+        "RedundancyFactor": 0
+    },
+    "Zomes": [
+        {
+            "Name": "readerWriter",
+            "Description": "read and write data",
+            "CodeFile": "readerWriter.js",
+            "RibosomeType": "js",
+                    "BridgeFuncs": null,
+            "Config": null,
+            "Entries": [
+                {
+                    "Name": "holoText",
+                    "DataFormat": "string",
+                    "Sharing": "public"
+                }
+            ],
+            "Functions": [
+                {
+                    "Name": "holoTextWrite"
+                    , "CallingType": "string"
+                }
+
+                , {
+                    "Name": "holoTextRead"
+                    , "CallingType": "string"
+                }
+            ]
+        }
+    ]
+}
