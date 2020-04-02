@@ -1,4 +1,4 @@
-# Holochain DevCamp Alpha Oct 2018
+# Holochain DevCamp Alpha Notes Oct 2018 - Dermot Doherty
 
 ## Holochain DevCamp Team
 - Mickki - Operations
@@ -6,7 +6,7 @@
 - Conor Turland - Developer Training & Documentation - Core dev team
 
 **Holochains,** by design, should be used in the context of a group operating by a shared set of agreements.
-These agreements are encoded in the validation rules (DNA) which are checked before authoring to one's local chain, and are also checked by every DHT node asked to publish the new data.
+These agreements are encoded in the validation rules (DNA) which are checked before authoring to ones local chain, and are also checked by every DHT node asked to publish the new data.
 If you commit things to your chain, or try to publish things which don't comply with the validation rules, the rest of the network/DHT rejects it.
 
 ## Holochain App (hApp)
@@ -23,33 +23,33 @@ https://developer.holochain.org/
 Hoochain API functions can called from our JavaScript Zome
 https://developer.holochain.org/API
 
-## Holochain API
 - Commit - Write to local src chain  
       entryType: string
       entryData: any-type
 
       Returns: hash-string OR error
 
-Get - Get from local src chain
+- Get - Get from local src chain
 
 TypeScript
 Holochain TypeScript Template Repo
 
 ## Linking
 Distrbute Hash Table - When your data gets gossiped out to the DHT (your peers).
-Need to be able ot retrienve data from across the network.
-Create links between different entries on the DHT
+Need to be able ot retrieve data from across the network.
+Create links between different entries on the DHT.
 Link has a base (hash of entry), a Link (a target - has of entry that it's to), tag (string describes relationship between the 2 things)
-Used to create a graph within the DHT
+Used to create a graph within the DHT.
 App.Key.Hash is an identifier for the current user.
 
-Links is a special datatype within Holochain
+`Links` is a special datatype within Holochain
 
 ## Entry Type: Links
 A Links entry has:
 - Base: hash - thing being linked from
 - Link/Target: hash - thing being linked to
 - Tag: string - describes the relationship between
+
 ```
   commit("taskLink", {
     Links: [
@@ -63,8 +63,7 @@ A Links entry has:
 https://developer.holochain.org/Validation_Functions
 
 - validateCommit
-- validatePut - Triggered when you receive as a node in the network a request from someone else to store an entry into your local DHT. Entries must pass
-  'validatePut' to be written to the DHT.
+- validatePut - Triggered when you receive as a node in the network a request from someone else to store an entry into your local DHT. Entries must pass 'validatePut' to be written to the DHT.
 - validateMod - Triggered when you call update on an entry.
 - validateDel - Triggered when you call a remove.
 - validateLink - Special case for Links entry type.
